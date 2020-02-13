@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private Button bttn_sin, bttn_cos, bttn_tan, bttn_cosec, bttn_sec, bttn_ctg;
+    private Button bttn_sin, bttn_cos, bttn_tan, bttn_cosec, bttn_sec, bttn_ctg, bttn_log;
     private TextView result;
     private EditText input;
     @Override
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         bttn_cosec = findViewById(R.id.bttn_cosec);
         bttn_sec = findViewById(R.id.bttn_sec);
         bttn_ctg = findViewById(R.id.bttn_ctg);
+        bttn_log = findViewById(R.id.bttn_log);
         result = findViewById(R.id.result);
         input = findViewById(R.id.input);
 
@@ -95,6 +96,19 @@ public class MainActivity extends AppCompatActivity {
                 double input = Double.parseDouble(sInput);
 
                 double _result = 1.0/Math.tan(input);
+                String sResult = String.valueOf(_result);
+
+                result.setText(sResult);
+
+            }
+        });
+        bttn_log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String sInput = input.getText().toString();
+                double input = Double.parseDouble(sInput);
+
+                double _result = Math.log10(input);
                 String sResult = String.valueOf(_result);
 
                 result.setText(sResult);
