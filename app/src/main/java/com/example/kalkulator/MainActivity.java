@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button bttn_sin, bttn_cos, bttn_tan, bttn_cosec, bttn_sec, bttn_ctg, bttn_log;
@@ -26,22 +27,27 @@ public class MainActivity extends AppCompatActivity {
         bttn_log = findViewById(R.id.bttn_log);
         result = findViewById(R.id.result);
         input = findViewById(R.id.input);
+            bttn_sin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try{
+                    String sInput = input.getText().toString();
 
-        bttn_sin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String sInput = input.getText().toString();
-                double input = Double.parseDouble(sInput);
+                    double input = Double.parseDouble(sInput);
 
-                double _result = Math.sin(input);
-                String sResult = String.valueOf(_result);
+                    double _result = Math.sin(input);
+                    String sResult = String.valueOf(_result);
 
-                result.setText(sResult);
-            }
-        });
+                    result.setText(sResult);
+                    }catch (NumberFormatException ex){
+                        Toast.makeText(getApplicationContext(), "Field Tidak Boleh Kosong",Toast.LENGTH_SHORT) .show();
+                    }
+                }
+            });
         bttn_cos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try{
                 String sInput = input.getText().toString();
                 double input = Double.parseDouble(sInput);
 
@@ -49,11 +55,15 @@ public class MainActivity extends AppCompatActivity {
                 String sResult = String.valueOf(_result);
 
                 result.setText(sResult);
+                }catch (NumberFormatException ex){
+                    Toast.makeText(getApplicationContext(), "Field Tidak Boleh Kosong",Toast.LENGTH_SHORT) .show();
+                }
             }
         });
         bttn_tan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try{
                 String sInput = input.getText().toString();
                 double input = Double.parseDouble(sInput);
 
@@ -61,11 +71,15 @@ public class MainActivity extends AppCompatActivity {
                 String sResult = String.valueOf(_result);
 
                 result.setText(sResult);
+                }catch (NumberFormatException ex){
+                    Toast.makeText(getApplicationContext(), "Field Tidak Boleh Kosong",Toast.LENGTH_SHORT) .show();
+                }
             }
         });
         bttn_cosec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try{
                 String sInput = input.getText().toString();
                 double input = Double.parseDouble(sInput);
 
@@ -73,12 +87,17 @@ public class MainActivity extends AppCompatActivity {
                 String sResult = String.valueOf(_result);
 
                 result.setText(sResult);
+                }catch (NumberFormatException ex){
+                    Toast.makeText(getApplicationContext(), "Field Tidak Boleh Kosong",Toast.LENGTH_SHORT) .show();
+                }
+
             }
         });
 
         bttn_sec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try{
                 String sInput = input.getText().toString();
                 double input = Double.parseDouble(sInput);
 
@@ -86,12 +105,16 @@ public class MainActivity extends AppCompatActivity {
                 String sResult = String.valueOf(_result);
 
                 result.setText(sResult);
+                }catch (NumberFormatException ex){
+                    Toast.makeText(getApplicationContext(), "Field Tidak Boleh Kosong",Toast.LENGTH_SHORT) .show();
+                }
             }
         });
 
         bttn_ctg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try{
                 String sInput = input.getText().toString();
                 double input = Double.parseDouble(sInput);
 
@@ -99,12 +122,17 @@ public class MainActivity extends AppCompatActivity {
                 String sResult = String.valueOf(_result);
 
                 result.setText(sResult);
+                }catch (NumberFormatException ex){
+                    Toast.makeText(getApplicationContext(), "Field Tidak Boleh Kosong",Toast.LENGTH_SHORT) .show();
+                }
+
 
             }
         });
         bttn_log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try{
                 String sInput = input.getText().toString();
                 double input = Double.parseDouble(sInput);
 
@@ -112,6 +140,10 @@ public class MainActivity extends AppCompatActivity {
                 String sResult = String.valueOf(_result);
 
                 result.setText(sResult);
+
+                }catch (NumberFormatException ex){
+                    Toast.makeText(getApplicationContext(), "Field Tidak Boleh Kosong",Toast.LENGTH_SHORT) .show();
+                }
 
             }
         });
